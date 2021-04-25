@@ -1,0 +1,32 @@
+﻿
+@model Book
+@{      ViewData["Title"] = Model.Title;
+}
+
+@if(Model == null)
+{
+    <p>Oops! No matching found </p> 
+}else
+{
+<table class="table table-responsive table-striped mt-5">
+    <tr>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Edition</th>
+        <th>Publisher</th>
+    </tr>
+
+    <tr>
+        <td>@Model.ISBN</td>
+        <td><a asp-controller="home" asp-action="Book" asp-route-Id="@Model.BookId">@Model.Title</a></td>
+        <td>@Model.Author</td>
+        <td>@Model.Edition</td>
+        <td>@Model.Publisher</td>
+    </tr>
+    
+
+
+
+</table>  
+}

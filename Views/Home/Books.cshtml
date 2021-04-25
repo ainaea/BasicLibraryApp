@@ -1,0 +1,41 @@
+﻿@model ICollection<Book>;
+@{
+    ViewData["Title"] = "All books";
+}
+
+<div class="text-center">
+    <h1 class="display-4">List of all Books</h1>
+
+    @if (Model.Count<Book>() > 0)
+    {
+
+        <table class="table table-responsive table-striped mt-5">
+            <tr>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Edition</th>
+                <th>Publisher</th>
+            </tr>
+
+            @foreach (Book book in Model)
+            {
+                <tr>
+                    <td>@book.ISBN</td>
+                    <td><a asp-controller="home" asp-action="Book" asp-route-Id="@book.BookId">@book.Title</a></td>
+                    <td>@book.Author</td>
+                    <td>@book.Edition</td>
+                    <td>@book.Publisher</td>
+                </tr>
+            }
+
+
+
+        </table>
+    }
+    else
+    {
+        <p>No book to display</p>
+    }
+</div>
+

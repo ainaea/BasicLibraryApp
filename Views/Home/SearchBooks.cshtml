@@ -1,0 +1,28 @@
+﻿@model Book
+@{
+    ViewData["Title"] = "Search for a book";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Add Employee</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+
+
+            <form asp-controller="home" asp-action="DisplayBooks" method="post">
+                <div class="form-group">
+                    <input class="form-control" placeholder="Enter Book title" asp-for="Title" />
+                    <span class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="form-control btn btn-block btn-danger" value="Search book" />
+                    <span class="text-danger"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>

@@ -14,5 +14,6 @@ namespace BasicLibraryManagementSystem.Models
         public string CoverPhoto { get; set; }
         public string Edition { get; set; }
         public string Publisher { get; set; }
+        public bool Borrowed { get; set; } = false;
     }
 }

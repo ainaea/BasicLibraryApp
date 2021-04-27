@@ -21,10 +21,14 @@ namespace BasicLibraryManagementSystem.Services
             int lastId = lastEntered == null ? 0 : lastEntered.BookId;
             return lastId + 1;
         }
-
+        
+        public void BorrowBook(int id)
+        {
+            booksCollection.FirstOrDefault(e => e.BookId == id).Borrowed = true;
+        }
         public IEnumerable<Book> GetAllBooks()
         {
-            return booksCollection.ToList();
+            return booksCollection.Where(b=> b.Borrowed == false).ToList();
         }
 
         public Book GetBook(int id)
@@ -32,9 +36,9 @@ namespace BasicLibraryManagementSystem.Services
             return booksCollection.FirstOrDefault(e => e.BookId == id);
         }
 
-        public Book GetBook(string title)
+        public IEnumerable<Book> GetBook(string title)
         {
-            return booksCollection.FirstOrDefault(e => e.Title.ToLower() == title.ToLower());
+            return booksCollection.Where(e => e.Title.ToLower().Contains(title.ToLower()));
         }
 
         public void AddBook(Book book)

@@ -62,13 +62,24 @@ namespace BasicLibraryManagementSystem.Controllers
         
         public IActionResult DisplayBooks(Book book)
         {
-            Book choiceBook = allBookServies.GetBook(book.Title);
+            IEnumerable<Book> choiceBook = allBookServies.GetBook(book.Title);
             return View(choiceBook);
         }
 
         public IActionResult Book(int id)
         {            
             return View(allBookServies.GetBook(id));
+        }
+
+        public IActionResult BorrowBook(Book book)
+        {
+            return View(book);
+        }
+
+        public IActionResult Borrowed(Book book)
+        {
+            allBookServies.BorrowBook(book.BookId);
+            return View(book);
         }
 
         public IActionResult Privacy()

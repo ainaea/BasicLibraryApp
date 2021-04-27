@@ -1,9 +1,10 @@
 ﻿
-@model Book
-@{      ViewData["Title"] = Model.Title;
+@model IEnumerable<Book>
+@{      
+    ViewData["Title"] = "Search result";
 }
 
-@if(Model == null)
+@if(Model.Count<Book>() == 0)
 {
     <p>Oops! No matching found </p> 
 }else
@@ -17,14 +18,17 @@
         <th>Publisher</th>
     </tr>
 
+
+    @foreach (Book book in Model)
+    {
     <tr>
-        <td>@Model.ISBN</td>
-        <td><a asp-controller="home" asp-action="Book" asp-route-Id="@Model.BookId">@Model.Title</a></td>
-        <td>@Model.Author</td>
-        <td>@Model.Edition</td>
-        <td>@Model.Publisher</td>
+        <td>@book.ISBN</td>
+        <td><a asp-controller="home" asp-action="Book" asp-route-Id="@book.BookId">@book.Title</a></td>
+        <td>@book.Author</td>
+        <td>@book.Edition</td>
+        <td>@book.Publisher</td>
     </tr>
-    
+    }
 
 
 

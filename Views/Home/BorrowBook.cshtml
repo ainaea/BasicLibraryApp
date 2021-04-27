@@ -1,0 +1,55 @@
+﻿@model Book;
+@{
+    ViewData["Title"] = "Borrowers details";
+}
+
+
+<div class="container">
+    <div class="row">
+        <img class="col-md-5" src="@Model.CoverPhoto" alt="@Model.Title by @Model.Author" />
+        <div class="col-md-5">
+            <form>
+                <div class="form-group row">
+                    <label for="ISBN" class="col-sm-3 col-form-label">Book title</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="ISBN" value="@Model.Title" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="Author" class="col-sm-3 col-form-label">Author</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="Author" value="@Model.Author" readonly>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label for="Title" class="col-sm-3 col-form-label">Borrower's name</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="name" placeholder="Enter name" required>
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label for="Title" class="col-sm-3 col-form-label">Borrower's eMail</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" type="email" id="email" placeholder="Enter eMail" required>
+                    </div>
+                </div>
+                                
+                <div class="form-group row">
+                    
+                        <div class="col-sm-8">
+                            <input type="button" class="form-control" id="Borrow" value="Submit " onclick="location.href='@Url.Action("Borrowed", "home", @Model)'">
+                        </div>
+                    
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>

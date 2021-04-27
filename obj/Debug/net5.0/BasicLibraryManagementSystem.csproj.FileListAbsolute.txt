@@ -43,3 +43,5 @@ C:\CodebitsAcademy\ClassSession\ASP.NETCore\BasicLibraryManagementSystem\obj\Deb
 C:\CodebitsAcademy\ClassSession\ASP.NETCore\BasicLibraryManagementSystem\obj\Debug\net5.0\Razor\Views\Home\SearchBooks.cshtml.g.cs
 C:\CodebitsAcademy\ClassSession\ASP.NETCore\BasicLibraryManagementSystem\obj\Debug\net5.0\Razor\Views\Home\Book.cshtml.g.cs
 C:\CodebitsAcademy\ClassSession\ASP.NETCore\BasicLibraryManagementSystem\obj\Debug\net5.0\Razor\Views\Home\DisplayBooks.cshtml.g.cs
+C:\CodebitsAcademy\ClassSession\ASP.NETCore\BasicLibraryManagementSystem\obj\Debug\net5.0\Razor\Views\Home\BorrowBook.cshtml.g.cs
+C:\CodebitsAcademy\ClassSession\ASP.NETCore\BasicLibraryManagementSystem\obj\Debug\net5.0\Razor\Views\Home\Borrowed.cshtml.g.cs
